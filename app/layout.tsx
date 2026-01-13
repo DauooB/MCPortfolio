@@ -16,7 +16,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        // 2. INJECT VARIABLE
         className={`antialiased`}
       >
         <SoundManager />
@@ -30,11 +29,8 @@ export default function RootLayout({
           }}
         />
 
-        {/* --- DARK OVERLAY (Optional but recommended) --- */}
-        {/* We separate this so the overlay doesn't move with the image */}
         <div className="fixed inset-0 z-[-1] bg-black/40 pointer-events-none" />
 
-        {/* --- MAIN CONTENT --- */}
         <main className="relative z-10">
           {children}
         </main>

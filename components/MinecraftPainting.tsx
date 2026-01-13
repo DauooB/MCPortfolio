@@ -4,21 +4,20 @@ interface MinecraftPaintingProps {
   src: string;
   alt?: string;
   className?: string;
-  aspect?: "square" | "video" | "auto"; // New Prop to control shape
+  aspect?: "square" | "video" | "auto";
 }
 
 export default function MinecraftPainting({ 
   src, 
   alt = "Minecraft Painting", 
   className = "",
-  aspect = "square" // Default to square like before
+  aspect = "square" 
 }: MinecraftPaintingProps) {
   
-  // Determine aspect ratio class
   const aspectClass = 
     aspect === "square" ? "aspect-square" : 
     aspect === "video" ? "aspect-video" : 
-    ""; // 'auto' lets the image dictate height
+    ""; 
 
   return (
     <div className={`relative group ${className}`}>
@@ -44,14 +43,12 @@ export default function MinecraftPainting({
         <img 
           src={src} 
           alt={alt} 
-          className="w-full h-full object-fill z-10 relative" // Changed to object-fill so it fills the rectangle
+          className="w-full h-full object-fill z-10 relative" 
           style={{ 
-            // We turn OFF pixelated for certificates so text is readable
             imageRendering: aspect === 'square' ? 'pixelated' : 'auto' 
           }}
         />
 
-        {/* OVERLAY (Optional texture grain - reduced opacity for certificates) */}
         <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-5 bg-[url('/textures/noise.png')]"></div>
       </div>
     </div>

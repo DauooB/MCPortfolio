@@ -7,8 +7,8 @@ interface ServerListEntryProps {
   ping?: number;
   players: number;
   maxPlayers: number;
-  onClick?: () => void;     // Opens the Live Project
-  githubLink?: string;      // Opens the Code
+  onClick?: () => void;  
+  githubLink?: string;      
 }
 
 export default function ServerListEntry({
@@ -59,13 +59,13 @@ export default function ServerListEntry({
       {/* 3. ACTIONS & STATUS */}
       <div className="flex items-center h-full ml-4 gap-4">
         
-        {/* GITHUB BUTTON (Only shows if link is provided) */}
+        {/* GITHUB BUTTON*/}
         {githubLink && (
           <a
             href={githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()} // Prevents opening the project when clicking Github
+            onClick={(e) => e.stopPropagation()} 
             className="
               hidden group-hover:flex /* Show only on hover to keep it clean */
               items-center justify-center

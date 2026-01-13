@@ -2,14 +2,14 @@ import React from "react";
 
 interface ItemFrameProps {
   children?: React.ReactNode;
-  size?: string; // Allow resizing (default w-20 h-20)
-  label?: string; // Optional text label below the frame (like a tooltip)
+  size?: string; 
+  label?: string; 
 }
 
 export default function ItemFrame({ children, size = "w-24 h-24", label }: ItemFrameProps) {
   return (
     <div className="flex flex-col items-center gap-2 group">
-      {/* THE FRAME ITSELF */}
+
       <div 
         className={`
           relative 
@@ -27,16 +27,12 @@ export default function ItemFrame({ children, size = "w-24 h-24", label }: ItemF
           transition-transform hover:scale-105 duration-100 ease-linear cursor-pointer
         `}
       >
-        {/* The Content (Tool/Block) */}
         <div className="relative z-10 w-[70%] h-[70%] drop-shadow-md group-hover:scale-110 transition-transform">
           {children}
         </div>
 
-        {/* The "Nail" (Optional detail to look realistic) */}
-        {/* <div className="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3a2311] rounded-full opacity-50"></div> */}
       </div>
 
-      {/* OPTIONAL LABEL (Only shows on hover if you want) */}
       {label && (
         <span className="font-minecraft text-white text-xs text-shadow opacity-70 group-hover:opacity-100 transition-opacity">
           {label}

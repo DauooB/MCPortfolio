@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import MCButton from "./MCButton"; // Reuse your existing button
+import MCButton from "./MCButton";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -9,7 +9,6 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
-  // Form State
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,12 +18,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   if (!isOpen) return null;
 
-  // Handle Input Changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle Formspree Submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
@@ -39,7 +36,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       if (response.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
-        // Optional: Close after 2 seconds
         setTimeout(() => {
            setStatus("idle");
            onClose();
@@ -53,7 +49,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   };
 
   return (
-    // 1. BACKDROP (Darkens the rest of the screen)
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
       
       {/* 2. THE GUI CONTAINER (Matches 'Edit Server Info' screen) */}

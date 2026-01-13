@@ -5,20 +5,19 @@ import React, { useEffect, useRef, useState } from "react";
 export default function BackgroundMusic() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.5); // Default volume 50%
+  const [volume, setVolume] = useState(0.5); 
 
-  // 1. ATTEMPT AUTO-PLAY ON MOUNT
+  
   useEffect(() => {
     // Check if user previously muted it
     const savedMute = localStorage.getItem("mc-music-muted");
-    if (savedMute === "true") return; // Don't auto-play if they muted it last time
+    if (savedMute === "true") return; 
 
     const audio = audioRef.current;
     if (!audio) return;
 
     audio.volume = volume;
 
-    // Browser Autoplay Policy: We try to play. If it fails, we wait for a click.
     const playPromise = audio.play();
     
     if (playPromise !== undefined) {
@@ -27,7 +26,6 @@ export default function BackgroundMusic() {
           setIsPlaying(true);
         })
         .catch(() => {
-          // Auto-play was blocked. We add a one-time listener to start it on first click.
           const startAudio = () => {
             audio.play();
             setIsPlaying(true);
@@ -38,7 +36,6 @@ export default function BackgroundMusic() {
     }
   }, []);
 
-  // 2. TOGGLE FUNCTION
   const toggleMusic = () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -60,7 +57,7 @@ export default function BackgroundMusic() {
       <audio 
         ref={audioRef} 
         src="/sounds/bgm.mp3" 
-        loop // Loop forever
+        loop
         hidden 
       />
 
@@ -100,12 +97,10 @@ export default function BackgroundMusic() {
         title={isPlaying ? "Mute Music" : "Play Music"}
       >
         {isPlaying ? (
-          /* Music Note Icon (Playing) */
           <svg className="w-6 h-6 fill-[#00FF00]" viewBox="0 0 24 24">
              <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
           </svg>
         ) : (
-          /* Muted Icon */
           <svg className="w-6 h-6 fill-[#FF5555]" viewBox="0 0 24 24">
              <path d="M4.27 3L3 4.27 12 13.27v2.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4v-.73l7.73 7.73 1.27-1.27L4.27 3zM12 7V3h4v4h-4z" />
           </svg>

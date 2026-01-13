@@ -7,7 +7,6 @@ export default function SoundManager() {
   const hoverRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    // Define the event listener
     const handlePlaySound = (event: CustomEvent) => {
       const type = event.detail.type;
       
@@ -20,10 +19,8 @@ export default function SoundManager() {
       }
     };
 
-    // Attach listener to window
     window.addEventListener("minecraft-sound" as any, handlePlaySound);
 
-    // Cleanup
     return () => {
       window.removeEventListener("minecraft-sound" as any, handlePlaySound);
     };

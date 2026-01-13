@@ -5,14 +5,13 @@ import MinecraftPainting from "@/components/MinecraftPainting";
 import MCButton from "@/components/MCButton";
 import { useRouter } from "next/navigation";
 
-// 1. ADD LINKS TO YOUR DATA
 const paintingsData = [
   {
     id: 1,
     src: "/certificates/python.png",
     alt: "Python Certificate",
     sizeClass: "w-full md:w-full",
-    link: "/pythoncertificate.pdf" // <--- Add URL here
+    link: "/pythoncertificate.pdf" 
   },
   {
     id: 2,
@@ -38,22 +37,19 @@ export default function PaintingGallery() {
         {paintingsData.map((painting) => (
           <div key={painting.id} className={`flex flex-col items-center group ${painting.sizeClass}`}>
             
-            {/* 2. WRAP THE COMPONENT IN AN ANCHOR TAG */}
             <a 
               href={painting.link}
-              target="_blank"             // Opens in new tab
-              rel="noopener noreferrer"   // Security best practice
+              target="_blank"             
+              rel="noopener noreferrer"   
               className="block w-full h-full cursor-pointer"
             >
               <MinecraftPainting 
                 src={painting.src} 
                 alt={painting.alt}
-                // Optional: Pass a class to highlight it's clickable
                 className="hover:brightness-110 transition-all"
               />
             </a>
 
-            {/* Caption */}
             <p className="font-minecraft text-white/80 text-center mt-4 text-lg bg-black/40 px-3 py-1 rounded">
               {painting.alt}
             </p>

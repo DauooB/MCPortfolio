@@ -10,11 +10,11 @@ const projects = [
     id: 1,
     name: "Portfolio Website",
     desc: "My personal portfolio website.",
-    icon: "/projects/portfolio.png", // Ensure this exists
+    icon: "/projects/portfolio.png", 
     ping: 23,
     completed: 8,
     total: 10,
-    link: "https://portfolio-five-topaz-30.vercel.app/",
+    link: "https://mc-portfolio-self.vercel.app/",
     github: "https://github.com/DauooB/MCPortfolio"
   },
   {
@@ -22,10 +22,10 @@ const projects = [
     name: "Password Manager",
     desc: "Secure password manager with encryption.",
     icon: "/projects/passwordmanager.png",
-    ping: 140, // Slower ping = fewer bars
+    ping: 140, 
     completed: 10,
     total: 10,
-    link: "https://password-manager-lovat-delta.vercel.app/", // Can be internal route
+    link: "https://password-manager-lovat-delta.vercel.app/", 
     github: "https://github.com/DauooB/PasswordManager"
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     name: "Slinks App",
     desc: "A simple URL shortening service.",
     icon: "/projects/slinks.png",
-    ping: 450, // High ping = red/orange bars
+    ping: 450, 
     completed: 3,
     total: 15,
     link: "https://slinks-kohl.vercel.app/",
@@ -44,13 +44,13 @@ const projects = [
     name: "Sircus",
     desc: "An elite gamified learning platform.",
     icon: "/projects/sircus.png",
-    ping: 450, // High ping = red/orange bars
+    ping: 450, 
     completed: 3,
     total: 15,
     link: "https://sircus-next-phi.vercel.app/",
     github: "https://github.com/ASH-13xen/sircus-next"
   },
-  // Add more...
+  
 ];
 
 export default function ProjectsPage() {
@@ -72,10 +72,7 @@ export default function ProjectsPage() {
         My Projects
       </h1>
 
-      {/* SERVER LIST CONTAINER 
-          1. bg-black/60: Dark transparent background
-          2. backdrop-blur-sm: Blurs the background image behind it
-      */}
+      {/* SERVER LIST CONTAINER*/}
       <div className="
         w-full max-w-4xl 
         flex flex-col gap-1 p-1 
@@ -84,7 +81,7 @@ export default function ProjectsPage() {
         shadow-2xl
       ">
         
-        {/* HEADER ROW (Like in game) */}
+        {/* HEADER ROW*/}
         <div className="flex justify-between px-2 py-1 bg-black/20 text-[#AAAAAA] font-minecraft text-xs">
            <span>Server Name</span>
            <span className="mr-8">Connection</span>

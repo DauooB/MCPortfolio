@@ -5,16 +5,14 @@ import { triggerSound } from "@/src/utils/playSound";
 
 interface MCButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  fullWidth?: boolean; // Prop to force full width
+  fullWidth?: boolean;
 }
 
 export default function MCButton({ children, fullWidth = false, className = "", ...props }: MCButtonProps) {
   
   const handleInteraction = (e: React.MouseEvent<HTMLButtonElement>) => {
-    triggerSound("click"); // Fire the event
+    triggerSound("click");
     
-    // NO DELAY NEEDED. 
-    // The sound plays in the Layout, which stays alive while the router works.
     setTimeout(() => {
       if (props.onClick) {
         props.onClick(e);
@@ -23,14 +21,6 @@ export default function MCButton({ children, fullWidth = false, className = "", 
   return (
     <button
       {...props}
-      // onClick={(e) => {
-      //   playClick();
-      //   setTimeout(() => {
-      //     if (props.onClick) {
-      //       props.onClick(e);
-      //     }
-      //   }, 450);
-      // }}
       onClick={handleInteraction}
       className={`
         relative 

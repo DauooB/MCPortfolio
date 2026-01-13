@@ -59,13 +59,9 @@ export default function Home() {
         </MCButton>
 
         {/* --- BOTTOM ROW --- */}
-        {/* 'relative' allows us to position the language button absolutely relative to this row */}
         <div className="relative flex w-full gap-4 mt-3">
 
-          {/* LANGUAGE BUTTON (Hanging Left) 
-             absolute: Removes it from the flow so Resume/Contact take full width
-             -left-[3.5rem]: Pushes it 56px to the left (Width 48px + Gap 8px)
-          */}
+          {/* LANGUAGE BUTTON */}
           <div className="absolute -left-[4.3rem] top-0 hidden md:block ">
             <MCButton className="w-12 px-3" aria-label="Language">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -74,10 +70,6 @@ export default function Home() {
             </MCButton>
           </div>
 
-          {/* For Mobile: If screen is small, maybe we want it inside? 
-              If you want it ALWAYS outside, remove 'hidden md:block' above 
-              and remove this mobile fallback block below.
-          */}
           <div className="block md:hidden mr-1">
             <MCButton className="w-12 px-3" aria-label="Language">
               <img
