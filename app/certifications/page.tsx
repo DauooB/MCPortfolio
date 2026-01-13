@@ -15,7 +15,7 @@ const paintingsData = [
   },
   {
     id: 2,
-    src: "/certificates/Webdev.png",
+    src: "/certificates/webdev.png",
     alt: "Web Development Certificate",
     sizeClass: "w-full md:w-full",
     link: "https://udemy-certificate.s3.amazonaws.com/image/UC-ba4042e0-29be-4af9-a341-6ac38b04e15c.jpg?v=1766248349000"
