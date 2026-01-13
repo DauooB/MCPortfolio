@@ -1,0 +1,55 @@
+.mc-button {
+    /* Dimensions & Spacing */
+    width: 400px;
+    height: 48px;
+    margin: 10px;
+    position: relative;
+    
+    /* The Base Texture (Stone Grey) */
+    background-color: #7d7d7d;
+    /* Optional: Add a noise texture image here for 100% accuracy */
+    background-image: linear-gradient(
+      45deg, 
+      rgba(255, 255, 255, 0.05) 25%, 
+      transparent 25%, 
+      transparent 75%, 
+      rgba(255, 255, 255, 0.05) 75%, 
+      rgba(255, 255, 255, 0.05)
+    );
+    background-size: 4px 4px;
+  
+    /* Typography */
+    color: #ffffff;
+    font-family: 'Minecraftia', 'Courier New', monospace; /* Ensure you have the font */
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 2px 2px #3f3f3f;
+    
+    /* The Border Structure */
+    border: 2px solid #000;
+    outline: none;
+    cursor: pointer;
+    
+    /* The 3D Effect (Highlights and Shadows) */
+    box-shadow: 
+      inset 2px 2px 0px #b8b8b8,
+      inset -2px -2px 0px #373737;
+  }
+  
+  /* Hover State - The Blue Overlay */
+  .mc-button:hover {
+    background-color: #6e84d6; /* The specific MC hover blue */
+    box-shadow: 
+      inset 2px 2px 0px #8ea6f0, /* Lighter highlight */
+      inset -2px -2px 0px #455296; /* Darker shadow */
+    border-color: #fff; /* Border lights up */
+    text-shadow: 2px 2px #202a5a;
+  }
+  
+  /* Active/Click State */
+  .mc-button:active {
+    background-color: #4a4a4a;
+    box-shadow: 
+      inset 2px 2px 0px #373737,
+      inset -2px -2px 0px #b8b8b8;
+  }
