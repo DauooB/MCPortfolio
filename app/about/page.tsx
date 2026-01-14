@@ -111,6 +111,18 @@ const page = () => {
                 </div>
             </div>
 
+            <div className='flex gap-4'>
+                <MCButton className="pt-3 px-5" fullWidth onClick={() => window.open("https://www.linkedin.com/in/dauoo-bhaiya-3a355b326/","_blank")}>
+                    LinkedIn
+                </MCButton>
+                <MCButton className="pt-3 px-5" fullWidth onClick={() => window.open("https://www.instagram.com/dauoobhaiya/","_blank")}>
+                    Instagram
+                </MCButton>
+                <MCButton className="pt-3 px-5" fullWidth onClick={() => window.open("https://x.com/DauooBhaiya","_blank")}>
+                    X
+                </MCButton>
+            </div>
+
             <div className='mb-30'>
                 <MCButton className="pt-3 px-5" fullWidth onClick={() => router.push("/")}>
                     Back to main menu
