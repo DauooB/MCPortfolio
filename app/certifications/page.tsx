@@ -20,6 +20,20 @@ const paintingsData = [
     sizeClass: "w-full md:w-full",
     link: "https://udemy-certificate.s3.amazonaws.com/image/UC-ba4042e0-29be-4af9-a341-6ac38b04e15c.jpg?v=1766248349000"
   },
+  {
+    id: 3,
+    src: "/certificates/dsa.png",
+    alt: "Data Structures and Algorithms Certificate",
+    sizeClass: "w-full md:w-full",
+    link: "https://static.takeuforward.org/certificates/certificate-hUw78vPA.pdf"
+  },
+  {
+    id: 4,
+    src: "/certificates/cn.png",
+    alt: "Computer Networks Certificate",
+    sizeClass: "w-full md:w-full",
+    link: "https://static.takeuforward.org/certificates/certificate-ekmOsPoR.pdf"
+  },
 ];
 
 export default function PaintingGallery() {
